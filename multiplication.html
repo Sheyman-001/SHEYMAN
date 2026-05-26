@@ -78,7 +78,11 @@
 
             let output = document.getElementById("output");
 
-    
+            if (isNaN(start) || isNaN(end)) {
+                output.innerHTML = "Please enter valid numbers.";
+                return;
+            }
+
             let tableHTML = "<table border='1'>";
             for (let index = 1; index <= 14; index++) {
                 tableHTML += "<tr>";
