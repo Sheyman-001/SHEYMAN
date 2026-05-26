@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>multiplication table 1 to 12</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+            text-align: center;;
+            background: url(https://blossomify.org/wp-content/uploads/2024/10/dallc2b7e-2024-10-25-19.39.00-a-cheerful-colorful-scene-showing-children-engaging-in-playful-math-activities.-the-image-includes-children-playing-with-blocks-solving-puzzles-and.webp?w=1024);
+            background-color: rgba(0, 0, 0, 0.76);
+            height: 100vh;
+            background-blend-mode: darken;
+            color: white;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        h1 {
+            color: #333;
+        }
+        input {
+            margin: 10px;
+            padding: 10px;
+            width: 120px;
+            font-size: 16px;
+        }
+        button {
+            padding: 5px 10px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        output {
+            margin-top: 20px;
+            font-size: 18px;
+            text-align: left;
+            display: inline-block;
+            padding: 10px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        
+
+        }
+        table {
+            margin-top: 20px;
+            border-collapse: collapse;
+            font-style: bold;
+            font-weight: bold;
+            font-size: larger;
+            border-width: 5px;
+            border-color: blueviolet;
+        }
+        td {
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h2>multiplication table generator</h2>
+    <input type="number" id="startNum" placeholder="start number">
+    <input type="number" id="endNum" placeholder="end number">
+    <button onclick="generateTable()">Generate Table</button>
+    <div id="output"></div>
+    <script>
+        function generateTable() {
+            let start = parseInt(document.getElementById("startNum").value);
+            let end = parseInt(document.getElementById("endNum").value);
+
+            let output = document.getElementById("output");
+
+            if (isNaN(start) || isNaN(end)) {
+                output.innerHTML = "Please enter valid numbers.";
+                return;
+            }
+
+            let tableHTML = "<table border='1'>";
+            for (let index = 1; index <= 14; index++) {
+                tableHTML += "<tr>";
+                for (let shey = start; shey <= end; shey++) {
+                    tableHTML += `<td>${index} × ${shey} = ${index * shey}</td>`;
+                }
+                tableHTML += "</tr>";
+            }
+            tableHTML += "</table>";
+            output.innerHTML = tableHTML;
+        }
+    </script>
+</body>
+</html>
